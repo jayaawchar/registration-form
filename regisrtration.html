@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #84b9d200;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #d6e9ea00;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* .form-group button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        } */
+       
+
+    </style>
+</head>
+<body>
+
+
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form action="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><b><span class="formerror"></span></b>
+            </div>
+            <div class="form-group">
+                <label for="Date of Birth">Date of Birth:</label>
+                <input type="date" id="Date of Birth" name="Date of Birth" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="Username">Username:</label>
+                <input type="text" id="Username" name="Username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div>
+                <input type="submit" value="submit now">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        
+        function submitForm() {
+            // You can add form validation and submission logic here
+            // For simplicity, let's just log the form data for now
+            const form = document.getElementById('registrationForm');
+            const formData = new FormData(form);
+            for (const [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+        }
+        
+        
+    </script>
+
+</body>
+</html>
